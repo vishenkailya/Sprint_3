@@ -20,7 +20,7 @@ class LoginPageLocators:
     BUTTON_REGISTER = (By.XPATH, '//button[text()="Зарегистрироваться"]') #Кнопка "Зарегистрироваться"
     PROFILE_MARK_LOGGED_IN = (By.XPATH, '//*[@id="root"]/div/main/div/nav/ul/li[1]/a') #Подтверждение, что пользователь авторизировался
     BUTTON_PROFILE_LOGGED_IN_EXIT = (By.XPATH, '//*[@id="root"]/div/main/div/nav/ul/li[3]/button') #Кнопка для выхода
-    BUTTON_CONSTRUCTOR = (By.XPATH, '/html/body/div/div/header/nav/ul/li[1]/a/p') #Кнопка перехода к конструктору
+    BUTTON_CONSTRUCTOR = (By.XPATH, '//*[@id="root"]/div/header/nav/div') #Кнопка перехода к конструктору
     MAKE_BURGER_HEADER = (By.XPATH, '/html/body/div/div/main/section[1]/h1') #Хэдер конструктора бургеров
     BOOKMARK_BUNS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]') #Вкладка булочек
     BUNS_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/h2[1]') #Раздел булочек
