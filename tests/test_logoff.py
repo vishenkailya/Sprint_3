@@ -7,7 +7,6 @@ from conftest import login
 from conftest import driver
 from locators import LoginPageLocators as L
 
-
 class TestLogOff:
 
     def test_logging_out_logged_off(self, login):
