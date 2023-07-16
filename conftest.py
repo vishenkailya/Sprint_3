@@ -27,17 +27,15 @@ def login(driver):
     driver.find_element(*L.LOGIN_BUTTON).click()
     WebDriverWait(driver, 3). \
         until(expected_conditions.visibility_of_element_located(L.BUTTON_MAKE_ORDER))
-    return driver
+    yield driver
 
-@pytest.fixture()
+
+@pytest.fixture(scope="function")
 def open_registration_form(driver):
     driver.find_element(*L.BUTTON_MY_ACCOUNT).click()
     WebDriverWait(driver, 3). \
         until(expected_conditions.visibility_of_element_located(L.LOGIN_WINDOW))
     driver.find_element(*L.REGISTRATION_BUTTON).click()
     WebDriverWait(driver, 3). \
-        until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, '#root > div > main > div > h2')))
-    driver.find_element(By.CSS_SELECTOR, '#root > div > main > div > div > p > a')
-    WebDriverWait(driver, 3). \
-        until(expected_conditions.visibility_of_element_located(L.LOGIN_WINDOW))
-    return driver
+        until(expected_conditions.visibility_of_element_located(L.REGISTRATION))
+    yield driver

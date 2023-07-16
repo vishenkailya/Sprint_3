@@ -27,7 +27,7 @@ class TestRegistration:
     def test_short_password_registration_denied_warning_message(self, open_registration_form):
         open_registration_form.find_element(*L.REGISTRATION_NAME_INPUT).send_keys(random_name(random.randint(3, 8)))
         open_registration_form.find_element(*L.REGISTRATION_EMAIL_INPUT).send_keys(random_email())
-        open_registration_form.find_element(*L.REGISTRATION_PASSWORD_INPUT).send_keys(random_password(random.randint(0,5)))
+        open_registration_form.find_element(*L.REGISTRATION_PASSWORD_INPUT).send_keys(random_password(random.randint(1,5)))
         open_registration_form.find_element(*L.BUTTON_REGISTER).click()
         WebDriverWait(open_registration_form, 3). \
             until(expected_conditions.url_contains('register'))

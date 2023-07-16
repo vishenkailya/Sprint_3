@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -53,7 +51,6 @@ class TestLogin:
         driver.find_element(*L.REGISTRATION_BUTTON).click()
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.REGISTRATION))
-        time.sleep(3)
         driver.find_element(*L.LOGIN_FROM_REGISTRATION).click()
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.LOGIN_WINDOW))
