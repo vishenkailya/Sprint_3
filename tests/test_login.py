@@ -15,18 +15,18 @@ class TestLogin:
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.LOGIN_SCREEN))
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
-        driver.quit()
+
 
     def test_open_login_window_from_my_account_correct_page(self, driver):
         driver.find_element(*L.BUTTON_MY_ACCOUNT).click()
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.LOGIN_SCREEN))
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
-        driver.quit()
+
 
     def test_input_login_in_logged_in(self, login):
         assert login.find_element(*L.BUTTON_MAKE_ORDER).text == 'Оформить заказ'
-        login.quit()
+
 
     def test_wrong_input_password_warning(self, driver):
         driver.find_element(*L.BUTTON_MY_ACCOUNT).click()
@@ -42,7 +42,7 @@ class TestLogin:
                   visibility_of_element_located(L.MESSAGE_INCORRECT_PASSWORD))
         assert driver.find_element(*L.MESSAGE_INCORRECT_PASSWORD). \
                    text == 'Некорректный пароль'
-        driver.quit()
+
 
     def test_logging_in_from_registration_page_main_page_logged_in(self, driver):
         driver.find_element(*L.BUTTON_SIGN_IN).click()
@@ -60,7 +60,7 @@ class TestLogin:
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.BUTTON_MAKE_ORDER))
         assert driver.find_element(*L.BUTTON_MAKE_ORDER).text == 'Оформить заказ'
-        driver.quit()
+
 
     def test_logging_in_from_password_recovery_page_main_page_logged_in(self, driver):
         driver.find_element(*L.BUTTON_MY_ACCOUNT).click()
@@ -78,4 +78,4 @@ class TestLogin:
         WebDriverWait(driver, 3). \
             until(expected_conditions.visibility_of_element_located(L.BUTTON_MAKE_ORDER))
         assert driver.find_element(*L.BUTTON_MAKE_ORDER).text == 'Оформить заказ'
-        driver.quit()
+

@@ -1,6 +1,3 @@
-from typing import Tuple
-
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
@@ -14,9 +11,10 @@ class LoginPageLocators:
     BUTTON_SIGN_IN = (By.XPATH, '//button[text()="Войти в аккаунт"]') #Кнопка войти в аккаунт на главном окне
     BUTTON_MAKE_ORDER = (By.XPATH, '//button[text()="Оформить заказ"]') #Кнопка Оформить заказ после авторизации
     REGISTRATION_BUTTON = (By.XPATH, "//a[contains(text(), 'Зарегистрироваться')]") #Кнопка "Зарегестрироваться"
-    REGISTRATION_NAME_INPUT = (By.XPATH, "//fieldset[1]/div/div/input[@name='name']") #Поле для ввода имени при регистрации
+    REGISTRATION_NAME_INPUT = (By.XPATH, "//input[@name='name']") #Поле для ввода имени при регистрации
+    #Этот локатор никак не исправить
     REGISTRATION_EMAIL_INPUT = (By.XPATH, "//fieldset[2]/div/div/input[@name='name']") #Поле для ввода почты при регистрации
-    REGISTRATION_PASSWORD_INPUT = (By.XPATH, "//fieldset[3]/div/div/input[@name='Пароль']") #Поле для ввода пароля при регистрации
+    REGISTRATION_PASSWORD_INPUT = (By.XPATH, "//input[@name='Пароль']") #Поле для ввода пароля при регистрации
     BUTTON_REGISTER = (By.XPATH, '//button[text()="Зарегистрироваться"]') #Кнопка "Зарегистрироваться"
     PROFILE_MARK_LOGGED_IN = (By.XPATH, '//a[text()="Профиль"]') #Подтверждение, что пользователь авторизировался
     BUTTON_PROFILE_LOGGED_IN_EXIT = (By.XPATH, '//button[text()="Выход"]') #Кнопка для выхода

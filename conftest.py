@@ -39,3 +39,4 @@ def open_registration_form(driver):
     WebDriverWait(driver, 3). \
         until(expected_conditions.visibility_of_element_located(L.REGISTRATION))
     yield driver
+    driver.quit()

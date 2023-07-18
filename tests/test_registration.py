@@ -22,7 +22,7 @@ class TestRegistration:
         WebDriverWait(open_registration_form, 3). \
             until(expected_conditions.url_contains('login'))
         assert open_registration_form.current_url == 'https://stellarburgers.nomoreparties.site/login'
-        open_registration_form.quit()
+
 
     def test_short_password_registration_denied_warning_message(self, open_registration_form):
         open_registration_form.find_element(*L.REGISTRATION_NAME_INPUT).send_keys(random_name(random.randint(3, 8)))
@@ -36,6 +36,6 @@ class TestRegistration:
                   visibility_of_element_located(L.MESSAGE_INCORRECT_REGISTRATION))
         assert open_registration_form.find_element(*L.MESSAGE_INCORRECT_REGISTRATION). \
                    text == 'Некорректный пароль'
-        open_registration_form.quit()
+
 
 

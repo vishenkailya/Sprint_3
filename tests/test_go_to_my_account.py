@@ -15,4 +15,3 @@ class TestMyAccount:
         login.find_element(*L.BUTTON_MY_ACCOUNT).click()
         WebDriverWait(login, 3).until(expected_conditions.visibility_of_element_located(L.PROFILE_MARK_LOGGED_IN))
         assert login.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'
-        login.quit()
