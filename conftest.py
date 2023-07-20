@@ -12,7 +12,8 @@ def driver():
     browser = webdriver.Chrome()
     browser.maximize_window()
     browser.get('https://stellarburgers.nomoreparties.site/')
-    return browser
+    yield browser
+    browser.quit()
 
 
 @pytest.fixture(scope="function")
@@ -27,7 +28,7 @@ def login(driver):
     driver.find_element(*L.LOGIN_BUTTON).click()
     WebDriverWait(driver, 3). \
         until(expected_conditions.visibility_of_element_located(L.BUTTON_MAKE_ORDER))
-    yield driver
+    return driver
 
 
 @pytest.fixture(scope="function")
@@ -38,5 +39,4 @@ def open_registration_form(driver):
     driver.find_element(*L.REGISTRATION_BUTTON).click()
     WebDriverWait(driver, 3). \
         until(expected_conditions.visibility_of_element_located(L.REGISTRATION))
-    yield driver
-    driver.quit()
+    return driver
